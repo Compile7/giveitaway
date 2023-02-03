@@ -1,0 +1,88 @@
+{
+    "IsSuccess": true,
+    "ResponseStatusCode": 200,
+    "Message": [
+        "Record fetch successfully"
+    ],
+    "Result": [
+        {
+            "ngoName": "Niwala Kamla Bai Charitable Trust",
+            "registrationId": "507/DHL/2016/17 Trust Act",
+            "contactNumber": "072318 88800",
+            "website": "https://www.kbct.org/",
+            "whatsappNumber": "072318 88800",
+            "address": "142,Maahinglaj Nagar -b Yadav Chamber Lalarpura Gandhi Path Road West Vaishali Nagar, Jaipur",
+            "pin": "302021",
+            "location": "",
+            "category": "Food",
+            "ifOther": "Books",
+            "workArea": "Children"
+        },
+        {
+            "ngoName": "Surman Sansthan",
+            "registrationId": "RJ/2018/0182885",
+            "contactNumber": "9828031708",
+            "website": "http://www.surmansansthanglobal.org/",
+            "whatsappNumber": "9828031708",
+            "address": "A-35, Balaji Appartment, Gandhi Path W, Nemi Nagar, Vaishali Nagar, Jaipur, Rajasthan",
+            "pin": "302021",
+            "location": "",
+            "category": "Cloths",
+            "ifOther": "Except food accepts everything even newspapers",
+            "workArea": "Children"
+        },
+        {
+            "ngoName": "Naya Sawera Ngo",
+            "registrationId": "922/jaipur/2008-09",
+            "contactNumber": "096490 20121",
+            "website": "http://www.nayasawera.org/",
+            "whatsappNumber": "096490 20121",
+            "address": "E-64, Vishnu Gopal Yadav Marg, Ajmer Rd, near Hotel V-One Pride, Nirman Nagar, E (West, Jaipur, Rajasthan",
+            "pin": "302019",
+            "location": "",
+            "category": "Cloths",
+            "ifOther": "Except food accepts everything even newspapers",
+            "workArea": "shelter home,old age home , community centre works for 0-50 age group"
+        },
+        {
+            "ngoName": "Drishya Bharti Sanskritik Evm Samajik Sanstha",
+            "registrationId": "",
+            "contactNumber": "094136 68183",
+            "website": "https://drishya-bharti-sanskritik-evm.business.site/",
+            "whatsappNumber": "094136 68183",
+            "address": "E, 233 Hem Marg Ramnagar, Swej Farm Rd, Sodala, Jaipur, Rajasthan",
+            "pin": "302019",
+            "location": "",
+            "category": "Food",
+            "ifOther": "Accept Everything",
+            "workArea": "Works for every age"
+        },
+        {
+            "ngoName": "Deepshikha Mahila Bal Utthan Samiti",
+            "registrationId": "RJ/2009/0000633",
+            "contactNumber": "9351385042",
+            "website": "",
+            "whatsappNumber": "9351385042",
+            "address": "C/O Kiran Nursing, Hatwara Rd, Dundlod House Colony, Jaipur, Rajasthan",
+            "pin": "302006",
+            "location": "",
+            "category": "Other",
+            "ifOther": "Computers, Sewing machine etc",
+            "workArea": "Children,women on trainings, education etc"
+        },
+        {
+            "ngoName": "Foundation For Education And Development\t",
+            "registrationId": "RJ/2017/0167052",
+            "contactNumber": "0141-2624820, 0141-4002250, 0141-2620127",
+            "website": "http://www.doosradashak.in/",
+            "whatsappNumber": "NA",
+            "address": "C-113, Shivagi Marg, Tilak Nagar, Jaipur",
+            "pin": "302004",
+            "location": "",
+            "category": "Other",
+            "ifOther": "New Stationary",
+            "workArea": "Education"
+        }
+    ],
+    "Error": ""
+}
