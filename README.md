@@ -48,3 +48,17 @@ If we could solve the above problem this will help to achieve our first and seco
 - NGO will open the request and get the food details and also call and whatsapp to the giver and get the food with 🙂.
 
 #### User Flow 
+_Details will added soon_
+####  NGO Flow
+_Details will added soon_
+#### Challenges
+- NGO registration automatically. 
+- Future Phase and Enhancement
+- Advance notification
+- List of events
+#### Marketing 
+_Details will added soon_
+#### Social Media 
+_Details will added soon_
+
+#### NGO listing 
