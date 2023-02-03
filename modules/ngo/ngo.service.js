@@ -1,6 +1,6 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const creds = require('../../credentials.json');
 const {findAllWithParams, insertMany, findAll} = require('../../model/ngo.model')
+const config = require("config");
 
 const formatSheetData = async(rows) => {
   const array = [];
@@ -40,8 +40,8 @@ const dataTransferToMongodb = async () => {
   try {
     const doc = new GoogleSpreadsheet("1dHRrFt_IINqUeKPE1vxyb2PnKor-c7lHqQZn8Tz2k1g");
     await doc.useServiceAccountAuth({
-      client_email: creds.client_email,
-      private_key: creds.private_key,
+      client_email: config.get("client_email"),
+      private_key: config.get("private_key"),
     });;
     await doc.loadInfo(); // loads document properties and worksheets
     const sheet = doc.sheetsByIndex[0];
