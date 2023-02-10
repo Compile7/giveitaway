@@ -11,7 +11,6 @@ const connectMongoDB = async () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     };
-    console.log(`mongodb+srv://${config.get('db.MONGO_HOST')}:${config.get('db.MONGO_PASSWORD')}@${config.get('db.MONGO_PATH')}/${config.get('db.MONGO_DBNAME')}?retryWrites=true&w=majority`)
     try {
         //connect to the db - host:port/dbName
         await mongoose.connect(`mongodb+srv://${config.get('db.MONGO_HOST')}:${config.get('db.MONGO_PASSWORD')}@${config.get('db.MONGO_PATH')}/${config.get('db.MONGO_DBNAME')}?retryWrites=true&w=majority`,{});

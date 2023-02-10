@@ -3,14 +3,14 @@ dotenv.config();
 const config = require("config");
 const app = require("./connection/express.js");
 const connectMongoDB = require("./connection/mongoconnection.js");
-const {dataTransferToMongodb} = require("./modules/ngo/ngo.service");
+const { dataTransferToMongodb } = require("./modules/ngo/ngo.service");
 var cron = require('node-cron');
 
 
 const port = config.get("port") || 3000;
 
 //schedule for data transfer
-cron.schedule('*/2 * * * *', function(){
+cron.schedule('30 5 * * *', () => {
     console.log(`cron running`);
     dataTransferToMongodb();
     console.log(`cron successfully runned`);
