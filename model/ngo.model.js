@@ -25,7 +25,7 @@ exports.findOneWithParams = async (condition, params) => {
     return value;
 };
 
-exports.findAllWithParams = async (condition, params, perPage = 10, page = 1, sort = '_id') => {
+exports.findAllWithParams = async (condition, params, perPage = 10, page = 0, sort = '_id') => {
     let value = await ngo.find(condition, params).limit(perPage).skip(perPage * page).sort(sort);
     return value;
 };

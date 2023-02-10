@@ -9,5 +9,7 @@ module.exports = {
   "private_key": process.env.PRIVATE_KEY,
   "client_email": process.env.CLIENT_EMAIL,
   "client_id": process.env.CLIENT_ID,
-  "client_x509_cert_url":  process.env.CLIENT_URL
+  "client_x509_cert_url":  process.env.CLIENT_URL,
+  "pin":  process.env.PIN,
+  "sheet_key": process.env.SHEET_KEY
 };

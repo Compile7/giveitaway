@@ -1,10 +1,10 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const {findAllWithParams, insertMany, findAll} = require('../../model/ngo.model')
+const { findAllWithParams, insertMany, findAll } = require('../../model/ngo.model')
 const config = require("config");
 
-const formatSheetData = async(rows) => {
+const formatSheetData = async (rows) => {
   const array = [];
-  rows.forEach((row)=>{
+  rows.forEach((row) => {
     array.push({
       ngoName: row['NGO Name'],
       registrationId: row['Registration ID'],
@@ -28,17 +28,34 @@ const formatSheetData = async(rows) => {
  * It's for get ngo list
  */
 const getNgos = async (req) => {
-  const {page, pageSize} = req.query;
-  const response = await findAllWithParams({}, '', pageSize, page);
+  const { page, pageSize, search } = req.query;
+  let condition = {};
+  if (search) {
+    condition['ngoName'] = new RegExp(search, 'i');
+  }
+  const response = await findAllWithParams(condition, '', pageSize, page);
   return {
     response
+  };
+};
+
+const updateNgos = async (req) => {
+  const { pin } = req.body;
+  if (pin != config.get('pin')) {
+    return {
+      wrongPin: true
+    }
+  }
+  await dataTransferToMongodb();
+  return {
+    response: true
   };
 };
 
 
 const dataTransferToMongodb = async () => {
   try {
-    const doc = new GoogleSpreadsheet("1dHRrFt_IINqUeKPE1vxyb2PnKor-c7lHqQZn8Tz2k1g");
+    const doc = new GoogleSpreadsheet(config.get('sheet_key'));
     await doc.useServiceAccountAuth({
       client_email: config.get("client_email"),
       private_key: config.get("private_key"),
@@ -49,7 +66,7 @@ const dataTransferToMongodb = async () => {
     const response = await formatSheetData(rows);
     const data = await findAll({}, '');
     const dataToUpdate = [];
-    response.forEach((value)=>{
+    response.forEach((value) => {
       var flag = false;
       data.some((ngo) => {
         if (value.ngoName == ngo.ngoName) {
@@ -61,14 +78,15 @@ const dataTransferToMongodb = async () => {
       }
     });
     console.log("dataToUpdate=>", dataToUpdate);
-    await insertMany(response);
+    await insertMany(dataToUpdate);
   } catch (error) {
-    console.log("error ==>",error);
+    console.log("dataTransferToMongodb error ==>", error);
   }
 }
 
 
 module.exports = {
   getNgos,
-  dataTransferToMongodb
+  dataTransferToMongodb,
+  updateNgos
 };
