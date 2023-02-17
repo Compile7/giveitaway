@@ -2,7 +2,8 @@ const { apiSuccessRes, apiErrorRes } = require("../../utils/commonResponse.js");
 const { errorResponse, CrudMessage, ServerStatusCode } = require("../../utils/constants");
 const {
   getNgos,
-  updateNgos
+  updateNgos,
+  getNgoCount
 } = require("./ngo.service");
 
 exports.getNgoList = async (req, res) => {
@@ -47,6 +48,31 @@ exports.updateNgoList = async (req, res) => {
     }
   } catch (error) {
     console.log("updateNgoList Error ===> ", error);
+    apiErrorRes(
+      res,
+      [errorResponse.SOMETHING_WRONG],
+      ServerStatusCode.SERVER_ERROR
+    );
+  }
+};
+
+
+exports.ngoCount = async (req, res) => {
+  try {
+    const result = await getNgoCount(req);
+    if (result.response) {
+      apiSuccessRes(
+        res,
+        [CrudMessage.RECORD_FETCH],
+        result.response,
+        ServerStatusCode.SUCCESS_CODE,
+        ''
+      );
+    } else {
+      apiErrorRes(res, [errorResponse.SOMETHING_WRONG], ServerStatusCode.UNPROCESSABLE, true);
+    }
+  } catch (error) {
+    console.log("ngoCount Error ===> ", error);
     apiErrorRes(
       res,
       [errorResponse.SOMETHING_WRONG],
