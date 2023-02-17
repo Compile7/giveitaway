@@ -1,5 +1,5 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { findAllWithParams, insertMany, findAll } = require('../../model/ngo.model')
+const { findAllWithParams, insertMany, findAll, findCount } = require('../../model/ngo.model')
 const config = require("config");
 
 const formatSheetData = async (rows) => {
@@ -63,6 +63,29 @@ const updateNgos = async (req) => {
   };
 };
 
+/**
+ *
+ * @param {*} req request from client side
+ * It's for get ngo count
+ */
+const getNgoCount = async (req) => {
+  const { search, city, pincode } = req.query;
+  let condition = {};
+  if (search) {
+    condition['ngoName'] = new RegExp(search, 'i');
+  }
+  if (city) {
+    condition['city'] = new RegExp(city, 'i');
+  }
+  if (pincode) {
+    condition['pin'] = pincode;
+  }
+  const response = {};
+  response.count = await findCount(condition);
+  return {
+    response
+  };
+};
 
 const dataTransferToMongodb = async () => {
   try {
@@ -99,5 +122,6 @@ const dataTransferToMongodb = async () => {
 module.exports = {
   getNgos,
   dataTransferToMongodb,
-  updateNgos
+  updateNgos,
+  getNgoCount
 };
