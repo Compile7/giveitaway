@@ -7,8 +7,8 @@ const formatSheetData = async (rows) => {
   rows.forEach((row) => {
     let cNumber = row['Contact Number'];
     let wNumber = row['Whatsapp number (if different) (allowed to accept )'];
-    wNumber = wNumber.replace(/\s/g,'').split(",");
-    cNumber = cNumber.replace(/\s/g,'').split(",");
+    wNumber = wNumber?.length ? wNumber.replace(/\s/g,'').split(",") : [];
+    cNumber = cNumber?.length ? cNumber.replace(/\s/g,'').split(",") : [];
     array.push({
       ngoName: row['NGO Name'],
       registrationId: row['Registration ID'],
@@ -33,10 +33,16 @@ const formatSheetData = async (rows) => {
  * It's for get ngo list
  */
 const getNgos = async (req) => {
-  const { page, pageSize, search } = req.query;
+  const { page, pageSize, search, city, pincode } = req.query;
   let condition = {};
   if (search) {
     condition['ngoName'] = new RegExp(search, 'i');
+  }
+  if (city) {
+    condition['city'] = new RegExp(city, 'i');
+  }
+  if (pincode) {
+    condition['pin'] = pincode;
   }
   const response = await findAllWithParams(condition, '', pageSize, page);
   return {
