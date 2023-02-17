@@ -5,18 +5,23 @@ const config = require("config");
 const formatSheetData = async (rows) => {
   const array = [];
   rows.forEach((row) => {
+    let cNumber = row['Contact Number'];
+    let wNumber = row['Whatsapp number (if different) (allowed to accept )'];
+    wNumber = wNumber.replace(/\s/g,'').split(",");
+    cNumber = cNumber.replace(/\s/g,'').split(",");
     array.push({
       ngoName: row['NGO Name'],
       registrationId: row['Registration ID'],
-      contactNumber: row['Contact Number'],
+      contactNumber: cNumber,
       website: row['Website'],
-      whatsappNumber: row['Whatsapp number (if different) (allowed to accept )'],
+      whatsappNumber: wNumber,
       address: row['Address'],
       pin: row['PIN'],
       location: row['Location of google map'],
       category: row['Category'],
       ifOther: row['If Other'],
-      workArea: row['Work Area']
+      workArea: row['Work Area'],
+      city: row['City']
     });
   })
   return array
