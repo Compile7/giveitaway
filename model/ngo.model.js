@@ -30,9 +30,15 @@ exports.findAllWithParams = async (condition, params, perPage = 10, page = 0, so
     let value = await ngo.find(condition, params).limit(perPage).skip(perPage * page).sort(sort);
     return value;
 };
+
 exports.findAll = async (condition, params, sort = '_id') => {
     let value = await ngo.find(condition, params).sort(sort);
     return value;
+};
+
+exports.findCount = async (condition) => {
+    let count = await ngo.count(condition);
+    return count;
 };
 
 exports.insertMany = async (data) => {
