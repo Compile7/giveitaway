@@ -1,0 +1,182 @@
+.donation-category-page-child,
+.donation-category-page-item {
+  position: absolute;
+  top: 771px;
+  left: -8px;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.donation-category-page-item {
+  top: 747px;
+  left: 395px;
+}
+.choose-your-category {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 317px);
+  left: 60px;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--color-gray);
+  display: inline-block;
+  width: 274px;
+  height: 22px;
+}
+.away4 {
+  color: var(--color-gold-100);
+}
+.give-it-away2 {
+  text-decoration: underline;
+  color: var(--color-orangered-100);
+}
+.copyright-2023-give-container2 {
+  margin: 0;
+  position: absolute;
+  top: 783px;
+  left: 83px;
+  font-size: var(--font-size-sm);
+  line-height: 120%;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  text-align: left;
+  color: var(--color-darkslategray);
+}
+.donation-category-page-inner {
+  position: absolute;
+  top: 39px;
+  left: -13px;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.menu-icon2 {
+  position: absolute;
+  top: 10px;
+  left: 342px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.away5 {
+  color: var(--color-gold-200);
+}
+.give-it-away-container2 {
+  position: absolute;
+  width: 79.2%;
+  top: 0.62%;
+  left: 32%;
+  font-size: var(--font-size-xl);
+  display: inline-block;
+  text-align: left;
+}
+.icons-and-shape2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 463px;
+  height: 274px;
+}
+.enter-name-button1 {
+  width: 86.67%;
+  position: absolute;
+  height: 6.16%;
+  top: 62.19%;
+  right: 5.87%;
+  bottom: 31.65%;
+  left: 7.47%;
+}
+.group-button,
+.polygon-input {
+  width: 325px;
+  position: absolute;
+  top: 702px;
+  left: 25px;
+}
+.polygon-input {
+  border: 0;
+  background-color: var(--color-black);
+  top: 537px;
+  left: 307px;
+  width: 17px;
+  height: 14px;
+}
+.image-11-icon {
+  position: absolute;
+  top: 337px;
+  left: 279px;
+  width: 73px;
+  height: 59px;
+}
+.image-12-icon,
+.image-14-icon {
+  position: absolute;
+  top: 148px;
+  left: 16px;
+  width: 113px;
+  height: 87px;
+}
+.image-14-icon {
+  top: 160px;
+  left: 286px;
+  width: 59px;
+  height: 63px;
+}
+.image-16-icon,
+.image-17-icon {
+  position: absolute;
+  top: 326px;
+  left: 28px;
+  width: 89px;
+  height: 80px;
+}
+.image-17-icon {
+  top: 227px;
+  left: 154px;
+  width: 73px;
+  height: 75px;
+}
+.clothes,
+.food6,
+.medicines,
+.other,
+.stationary {
+  position: absolute;
+  top: 228px;
+  left: 31px;
+  display: inline-block;
+  width: 83px;
+}
+.clothes,
+.medicines,
+.other,
+.stationary {
+  top: 409px;
+  left: 274px;
+}
+.clothes,
+.other,
+.stationary {
+  left: 31px;
+}
+.other,
+.stationary {
+  top: 232px;
+  left: 274px;
+}
+.other {
+  top: 313px;
+  left: 149px;
+}
+.donation-category-page {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-orangered-200);
+  font-family: var(--font-poppins);
+}

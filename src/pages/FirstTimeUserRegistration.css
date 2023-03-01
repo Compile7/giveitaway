@@ -1,0 +1,142 @@
+.icons-and-shape1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 463px;
+  height: 274px;
+}
+.first-time-user-registration-child {
+  width: 325px;
+  position: absolute;
+  top: 701px;
+  left: 25px;
+}
+.seems-you-are,
+.welcome-aboard {
+  margin: 0;
+  position: absolute;
+  font-family: inherit;
+}
+.welcome-aboard {
+  top: 11.58%;
+  left: 24.8%;
+  font-size: inherit;
+  font-weight: 700;
+}
+.seems-you-are {
+  top: 161px;
+  left: 46px;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-black);
+  display: inline-block;
+  width: 294px;
+  height: 53px;
+}
+.container,
+.enter-name-button,
+.frame,
+.wrapper {
+  width: 325px;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 353px;
+  left: 25px;
+}
+.container,
+.enter-name-button,
+.frame {
+  top: 413px;
+}
+.enter-name-button,
+.frame {
+  top: 473px;
+}
+.enter-name-button {
+  width: 86.67%;
+  height: 6.16%;
+  top: 65.64%;
+  right: 6.4%;
+  bottom: 28.2%;
+  left: 6.93%;
+}
+.undraw-mobile-login-re-9ntv-1-icon {
+  position: absolute;
+  top: 214px;
+  left: 115px;
+  width: 144.49px;
+  height: 113.45px;
+  overflow: hidden;
+}
+.first-time-user-registration-item {
+  position: absolute;
+  top: 43px;
+  left: -18px;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.menu-icon1 {
+  position: absolute;
+  top: 14px;
+  left: 337px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.away2 {
+  color: var(--color-gold-200);
+}
+.give-it-away-container1 {
+  margin: 0;
+  position: absolute;
+  height: 5.17%;
+  width: 34.4%;
+  top: 1.11%;
+  left: 38.4%;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: left;
+  display: inline-block;
+  color: var(--color-orangered-200);
+}
+.first-time-user-registration-inner {
+  position: absolute;
+  top: 771px;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.away3 {
+  color: var(--color-gold-100);
+}
+.give-it-away1 {
+  text-decoration: underline;
+  color: var(--color-orangered-100);
+}
+.copyright-2023-give-container1 {
+  margin: 0;
+  position: absolute;
+  top: 782px;
+  left: 93px;
+  font-size: var(--font-size-sm);
+  line-height: 120%;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  text-align: left;
+  color: var(--color-darkslategray);
+}
+.first-time-user-registration {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+  font-family: var(--font-poppins);
+}
