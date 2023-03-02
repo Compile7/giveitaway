@@ -1,0 +1,199 @@
+.useless-to-you {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.useless-to-you-container {
+  position: absolute;
+  height: 15.02%;
+  width: 75.47%;
+  top: 38.92%;
+  left: 13.07%;
+  font-size: 32px;
+  display: inline-block;
+}
+.could-be-a-gift-for-someone {
+  margin: 0;
+  color: var(--color-gold-200);
+}
+.could-be-a-container {
+  margin: 0;
+  position: absolute;
+  height: 13.55%;
+  width: 73.33%;
+  top: 40.39%;
+  left: 11.73%;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+}
+.joined {
+  margin: 0;
+}
+.ngo-joined {
+  margin: 0;
+  position: absolute;
+  height: 6.9%;
+  width: 22.67%;
+  top: 74.63%;
+  left: 3.47%;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+}
+.package-delivered {
+  position: relative;
+  display: inline-block;
+  width: 83px;
+  flex-shrink: 0;
+}
+.package-delivered-wrapper {
+  position: absolute;
+  top: 610px;
+  left: 128px;
+  width: 105px;
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.people-connected {
+  margin: 0;
+  position: absolute;
+  height: 8.74%;
+  width: 22.67%;
+  top: 75.12%;
+  left: 70.13%;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+}
+.home-screen-child {
+  width: 325px;
+  position: absolute;
+  top: 451px;
+  left: 25px;
+}
+.away6 {
+  color: var(--color-gold-200);
+}
+.give-it-away-container3 {
+  margin: 0;
+  position: absolute;
+  height: 7.76%;
+  width: 89.6%;
+  top: 10.1%;
+  left: 10.4%;
+  font-size: 45px;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: left;
+  display: inline-block;
+}
+.image-1-icon {
+  position: absolute;
+  top: 161px;
+  left: 133px;
+  width: 109px;
+  height: 129px;
+}
+.want-to-join1 {
+  color: var(--color-black);
+}
+.span7 {
+  color: var(--color-deepskyblue);
+}
+.want-to-join-container1 {
+  margin: 0;
+  position: absolute;
+  top: 738px;
+  left: 38px;
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  font-family: inherit;
+  color: var(--color-orangered-100);
+}
+.home-screen-inner,
+.home-screen-item {
+  position: absolute;
+  top: 769px;
+  left: -15px;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.home-screen-inner {
+  top: 45px;
+}
+.menu-icon3 {
+  position: absolute;
+  top: 12px;
+  left: 343px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.icons-and-shape3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 463px;
+  height: 274px;
+}
+.away7 {
+  color: var(--color-gold-100);
+}
+.give-it-away3 {
+  text-decoration: underline;
+  color: var(--color-orangered-100);
+}
+.copyright-2023-give-container3 {
+  margin: 0;
+  position: absolute;
+  top: 783px;
+  left: 81px;
+  font-size: var(--font-size-sm);
+  line-height: 120%;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  text-align: left;
+  color: var(--color-darkslategray);
+}
+.image-8-icon {
+  position: absolute;
+  top: 553px;
+  left: 30px;
+  width: 50px;
+  height: 47px;
+}
+.image-10-icon,
+.image-9-icon {
+  position: absolute;
+  top: 553px;
+  height: 50px;
+}
+.image-9-icon {
+  left: 278px;
+  width: 54px;
+  object-fit: cover;
+}
+.image-10-icon {
+  left: 152px;
+  width: 56px;
+}
+.home-screen {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-orangered-200);
+  font-family: var(--font-poppins);
+}

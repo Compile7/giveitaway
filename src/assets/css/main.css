@@ -1,0 +1,329 @@
+:root {
+    --red: #d81400;
+    --yellow: #f7c933;
+    --white: #ffffff;
+    --black: #000000;
+    --light-gray: #d9d9d9;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+}
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+img {
+    vertical-align: bottom;
+}
+.text-center {
+    text-align: center;
+}
+
+.title.text-lg {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--red);
+}
+.title.text-lg span {
+    color: var(--yellow);
+}
+.title.text-md {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+main {
+    padding: 24px 16px;
+    min-height: calc(100vh - 168px);
+}
+.busket-icon {
+    margin: 24px 0;
+}
+.busket-icon img {
+    max-width: 120px;
+}
+
+.sub-title span {
+    display: block;
+}
+.sub-title .text-lg {
+    color: var(--red);
+    font-size: 32px;
+}
+.sub-title .text-md {
+    color: var(--yellow);
+    font-size: 24px;
+}
+
+.cta button {
+    background-color: var(--red);
+    max-width: 380px;
+    width: 100%;
+    color: var(--white);
+    border-radius: 56px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 24px auto;
+    display: block;
+}
+.cta.big button {
+    font-size: 18px;
+    padding: 16px 16px;
+}
+.grid-33 {
+    display: flex;
+    justify-content: space-around;
+    gap: 24px;
+    margin: 56px auto;
+    max-width: 380px;
+}
+.grid-33 > div .icon {
+    margin-bottom: 12px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-33 > div .icon img {
+    max-width: 56px;
+    max-height: 56px;
+}
+.grid-33 > div .description {
+    color: var(--red);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+.signup {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 24px;
+}
+.signup a {
+    color: var(--red);
+}
+.signup a:hover {
+    text-decoration: underline;
+}
+footer {
+    min-height: 56px;
+    color: var(--black);
+    border-top: 1px solid var(--light-gray);
+    padding: 16px;
+}
+footer a {
+    color: var(--red);
+    text-decoration: underline;
+}
+footer a span {
+    color: var(--yellow);
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+}
+@media (max-width: 480px) {
+    .title.text-lg {
+        font-size: 40px;
+    }
+    .grid-33 > div .description {
+        font-size: 14px;
+    }
+}
+
+.page-description {
+    margin-bottom: 24px;
+}
+
+.profile-picture {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profile-picture img {
+    max-width: 96px;
+    max-height: 96px;
+}
+.container {
+    max-width: 380px;
+    margin: 0 auto;
+}
+.mt-24 {
+    margin-top: 24px;
+}
+.mb-24 {
+    margin-bottom: 24px;
+}
+.mx-24 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.my-24 {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.pb-24 {
+    padding-bottom: 24px;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="number"],
+.form select {
+    padding: 8px 16px;
+    min-height: 48px;
+    border-radius: 48px;
+    width: 100%;
+    border: 1px solid var(--black);
+    font-size: 16px;
+}
+.form input[type]::placeholder {
+    color: var(--black);
+}
+.form .form-group:not(:last-child) {
+    margin-bottom: 16px;
+}
+.form select {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6L0.669872 0.750001L9.33013 0.75L5 6Z' fill='black'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center right 16px;
+}
+.form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+}
+.border-b {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/*NGO list CSS*/
+.ngo-list {
+    margin-bottom: 56px;
+}
+.ngo-list > div {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--light-gray);
+}
+.about-ngo {
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+.about-ngo > div {
+    display: flex;
+    gap: 4px;
+}
+.about-ngo > div:not(:last-child) {
+    margin-bottom: 4px;
+}
+.about-ngo > div b {
+    font-weight: 500;
+}
+.ngo-social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ngo-social-media ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.ngo-social-media .social-links ul li a {
+    background-color: var(--red);
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+}
+.ngo-social-media .social-links ul li a:hover {
+    opacity: 0.85;
+}
+.ngo-social-media .social-links ul li a img {
+    width: 20px;
+    height: auto;
+}
+.ngo-social-media .like-dislike ul li a {
+    background-color: var(--white);
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+}
+.ngo-social-media .like-dislike ul li a:hover {
+    background-color: #eee;
+}
+
+/*Category CSS*/
+.category {
+    margin-top: 48px;
+}
+.category .block {
+    display: flex;
+    justify-content: space-between;
+}
+.category .block > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 120px;
+}
+.category .block.center {
+    justify-content: center;
+}
+.category .block .icon img {
+    max-width: 56px;
+    max-height: 56px;
+}
+.checkbox-wrpa input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--red);
+}
+.checkbox-wrpa label {
+    color: var(--red);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+.checkbox-wrpa .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+ a:link {
+    /* background-color: #f44336;*/
+   /* padding: 14px 25px; 
+    text-align: center; */
+    text-decoration: none;
+    /* display: inline-block; */
+  } 
+  a:hover{
+    color: #de2814 !important;
+  }
+  button:hover{
+    color: #f7c933!important;
+    transition: all 0.3s ease-in-out !important;
+  }

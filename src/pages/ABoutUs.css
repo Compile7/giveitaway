@@ -1,0 +1,152 @@
+.icons-and-shape4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 463px;
+  height: 274px;
+}
+.about-us1 {
+  margin: 0;
+  position: absolute;
+  top: 11.95%;
+  left: 36%;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+}
+.about-us-child {
+  position: absolute;
+  top: 41px;
+  left: -16px;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.menu-icon4 {
+  position: absolute;
+  top: 12px;
+  left: 339px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.away8 {
+  color: var(--color-gold-200);
+}
+.give-it-away-container4 {
+  margin: 0;
+  position: absolute;
+  height: 19.46%;
+  width: 79.2%;
+  top: 0.86%;
+  left: 31.2%;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  color: var(--color-orangered-200);
+}
+.menu {
+  position: absolute;
+  top: 9px;
+  left: 330px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.we-are-a {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.blank-line1 {
+  margin: 0;
+}
+.we-are-a-container {
+  margin: 0;
+  position: absolute;
+  top: 153px;
+  left: 31px;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  font-family: inherit;
+  color: var(--color-black);
+  display: inline-block;
+  width: 341px;
+  height: 117px;
+}
+.about-us-item {
+  position: absolute;
+  top: 773px;
+  left: 12px;
+  background-color: var(--color-gainsboro);
+  width: 403px;
+  height: 1px;
+}
+.away9 {
+  color: var(--color-gold-100);
+}
+.give-it-away4 {
+  text-decoration: underline;
+  color: var(--color-orangered-100);
+}
+.copyright-2023-give-container4 {
+  margin: 0;
+  position: absolute;
+  top: 782px;
+  left: 86px;
+  font-size: var(--font-size-sm);
+  line-height: 120%;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  color: var(--color-darkslategray);
+}
+.want-to-highlight {
+  color: var(--color-black);
+}
+.want-to-highlight-container {
+  margin: 0;
+  position: absolute;
+  top: 641px;
+  left: 24px;
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  font-family: inherit;
+  text-align: center;
+  color: var(--color-orangered-100);
+}
+.profilepicturemaker-1-1,
+.profilepicturemaker-1-icon {
+  position: absolute;
+  top: 439px;
+  left: 25px;
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+}
+.profilepicturemaker-1-icon {
+  left: 263px;
+  width: 96.22px;
+}
+.profilepicturemaker-1-icon1,
+.profilepicturemaker-3-icon {
+  position: absolute;
+  top: 302px;
+  left: 140px;
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+}
+.profilepicturemaker-1-icon1 {
+  top: 439px;
+}
+.about-us {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray);
+  font-family: var(--font-poppins);
+}

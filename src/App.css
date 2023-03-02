@@ -1,23 +1,28 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
-  font-size: 0.8rem;
+  font-size: 15px;
 }
+
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
+
 .header {
   background: #f93800;
   color: #fff;
   position: relative;
   z-index: 2;
 }
+
 .navbar {
   max-width: 1248px;
   padding: 0 24px;
@@ -27,131 +32,150 @@ a {
   justify-content: space-between;
   min-height: 72px;
 }
+
 .navbar h1 a,
 .navbar ul li a {
   color: white;
 }
+
 .navbar ul {
   display: flex;
 }
+
 .navbar ul li a {
   padding: 0 16px;
   transition: all 0.2s ease-in-out;
 }
+
 .navbar ul li a:hover,
 .navbar ul li a:focus {
   color: #ffb500;
 }
+
 /* Hamburger Menu*/
-#navcheck,
+/* #navcheck,
 .nav-btn,
 .backdrop {
-    display: none;
+  display: none;
 }
+
 .nav-btn {
-    position: fixed;
-    right: 24px;
-    top: 26px;
-    z-index: 99;
+  position: fixed;
+  right: 24px;
+  top: 26px;
+  z-index: 99;
 }
+
 .nav-btn label span {
-    display: block;
-    width: 30px;
-    height: 1.5px;
-    background: #000000;
-    border-radius: 3px;
-    transition: background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.3s ease-in-out,
-        -webkit-transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
-    -webkit-transition: background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.3s ease-in-out,
-        -webkit-transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
-    transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
-        opacity 0.3s ease-in-out;
-    transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
-        opacity 0.3s ease-in-out, -webkit-transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
-    position: relative;
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  background: #000000;
+  border-radius: 3px;
+  transition: background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.3s ease-in-out,
+    -webkit-transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+  -webkit-transition: background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.3s ease-in-out,
+    -webkit-transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
+    opacity 0.3s ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
+    opacity 0.3s ease-in-out, -webkit-transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+  position: relative;
 }
+
 .nav-btn label span:not(:last-child) {
-    margin-bottom: 7px;
+  margin-bottom: 7px;
 }
+
 @media (max-width: 992px) {
   .nav-menu {
-      display: none !important;
+    display: none !important;
   }
+
   .nav-btn {
-      display: block;
+    display: block;
   }
+
   .navbar ul li a {
-      color: #303030;
-      width: 100%;
-      display: block;
-      padding: 16px;
+    color: #303030;
+    width: 100%;
+    display: block;
+    padding: 16px;
   }
+
   #navcheck {
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 72px;
-      height: 72px;
-      z-index: 999;
-      cursor: pointer;
-      margin: 0;
-      display: block;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 72px;
+    height: 72px;
+    z-index: 999;
+    cursor: pointer;
+    margin: 0;
+    display: block;
   }
-  input#navcheck:checked ~ .nav-btn label span:first-child {
-      -webkit-transform: rotate(45deg) translate(6px, 6px);
-      transform: rotate(45deg) translate(6px, 6px);
-      top: 0;
-      left: 0;
+
+  input#navcheck:checked~.nav-btn label span:first-child {
+    -webkit-transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(6px, 6px);
+    top: 0;
+    left: 0;
   }
-  input#navcheck:checked ~ .nav-btn label span:last-child {
-      -webkit-transform: rotate(-45deg) translate(6px, -6px);
-      transform: rotate(-45deg) translate(6px, -6px);
-      top: 0;
-      left: 0;
+
+  input#navcheck:checked~.nav-btn label span:last-child {
+    -webkit-transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(6px, -6px);
+    top: 0;
+    left: 0;
   }
-  input#navcheck:checked ~ .nav-btn label span:nth-child(2) {
-      opacity: 0;
+
+  input#navcheck:checked~.nav-btn label span:nth-child(2) {
+    opacity: 0;
   }
-  input#navcheck:checked ~ .header .navbar .nav-menu {
-      display: block !important;
-      position: absolute;
-      top: 72px;
-      left: 0;
-      right: 0;
-      background-color: #fff;
+
+  input#navcheck:checked~.header .navbar .nav-menu {
+    display: block !important;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
   }
-  input#navcheck:checked ~ .backdrop {
-      position: absolute;
-      display: block;
-      background-color: rgba(0, 0, 0, 0.36);
-      width: 100%;
-      height: calc(100% - 72px);
-      z-index: 1;
+
+  input#navcheck:checked~.backdrop {
+    position: absolute;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.36);
+    width: 100%;
+    height: calc(100% - 72px);
+    z-index: 1;
   }
+
   button {
     margin-top: 40% !important;
-    height: 70px ;
+    height: 70px;
     width: 75%;
-      background-color: #007A64; /* Green */
-      border: none;
-      border-radius: 10px !important;
-      color: #ffb500;
-      padding: 10px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 200px !important;
-    }
-    
-}
+    background-color: #007A64;
+    /* Green */
+    /* border: none;
+    border-radius: 10px !important;
+    color: #ffb500;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 200px !important;
+  }
+
+} */
 
 
-button {
-margin-top: 50px !important;
-margin-bottom: 50px !important;
-height: 70px ;
-width: 75%;
+/* button {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+  height: 70px;
+  width: 75%;
   background-color: #ffb500;
   border: none;
   border-radius: 10px !important;
@@ -162,18 +186,21 @@ width: 75%;
   display: inline-block;
   font-size: 1.5rem !important;
 }
-.btn-donate:hover{
+
+.btn-donate:hover {
   background-color: #d99d04;
   font-size: 1.546rem !important;
   transition: all 0.3s ease-in-out;
 }
+
 .App {
   text-align: center;
 }
-body{
+
+body {
   color: #283350 !important;
 }
- 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -184,7 +211,8 @@ body{
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.navbar a{
+
+.navbar a {
   color: white;
   text-decoration: none;
 }
@@ -201,4 +229,11 @@ body{
   bottom: 0;
   height: 1.5rem;
   width: 100%;
-  }
+} */
+/* 
+.btn-category {
+  margin: 5px !important;
+  color: #283350;
+  background-color: white;
+  border: 1px solid #283350 !important;
+} */ 

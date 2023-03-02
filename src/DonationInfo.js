@@ -43,15 +43,14 @@ export default function DonationInfo() {
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Control type="email" placeholder="Enter Your Name" />
         </Form.Group>
-      <FloatingLabel controlId="floatingTextarea" label="Additional Details" className="mb-3">
-        <Form.Control as="textarea" placeholder="Additional Information" />
-      </FloatingLabel>
-        <Form.Group className="mb-3"></Form.Group>
+        <FloatingLabel controlId="floatingTextarea" label="Additional Details" className="mb-3">
+          <Form.Control as="textarea" placeholder="Additional Information" />
+        </FloatingLabel>
         <Button variant="primary" href="/ngodetails" type="submit">
-         Submit
-       </Button>
+          Submit
+        </Button>
       </Form>
-      
+
     </div>
   );
 }
