@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Give It Away
+### Description
+- #### Problem:
+  There is no platform where a person can find the right place to donate things like, extra food, used items, toys, stationary etc. Person has to reach out to multiple NGO to make sure if they accept such things or not.
+If we could solve the above problem this will help to achieve our first and second out of 17 sustainable goals.
+- #### Solution: 
+  **Give It Away** is a non profit platform which will list all the nearest NGO as per your need (books, food, used clothes, toys) , so it is easy to donate any things to needy people.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Technology
+- This will be a PWA app for frontend web app (which will be common for mobile and desktop )
+- Google Sheets as NGO listing 
+- Node.js as server to get nearest NGO
+### Schedule
+> 24-02-2023
+- 30 NGO listing 
+- Frontend (User Flow)
+- Social media posting and marketing 
+- GET API (list of NGO with filters)
+- Logo and infographics connect with NGOs 
+>24-03-2023
+- Google Analytics 
+- 60 NGO listing 
+- Frontend (NGO registration form)
+- Share data analytics
+- Social media share pictures
+### Team 
+ - Kuldeep(SPOC)
+ - Naman 
+ - Bhupendra 
+ - Neha 
+ - Krishna 
+ - Abhimanyu 
 
-## Available Scripts
+### Cost 
+- As of now no cost because we are using a sub domain of present NGO Domain.
 
-In the project directory, you can run:
+### Quality
+- NGO should list as per user location.
+- Users should be able to contact successfully.
+- App should be able to work offline as well.
+### Product Flow / User Journey
+- Suppose there is some extra food left over at an event or function.
+- The organizer(Giver) now wants to give his remaining extra food to those who need it. Like NGO/NPO  or any needy individual. 
+- The giver has to open the "Do Not Waste" website and add basic information related to the remaining extra food and submit the request.
+- This request will start appearing on the dashboard of the website and all those NGO/NPO who are nearby will get the information through notification.
+- NGO will open the request and get the food details and also call and whatsapp to the giver and get the food with 🙂.
 
-### `npm start`
+#### User Flow 
+_Details will added soon_
+####  NGO Flow
+_Details will added soon_
+#### Challenges
+- NGO registration automatically. 
+- Future Phase and Enhancement
+- Advance notification
+- List of events
+#### Marketing 
+_Details will added soon_
+#### Social Media 
+_Details will added soon_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### NGO listing 
