@@ -6,8 +6,9 @@ const schema = {
         pageSize: joi.number().positive().required(),
         search: joi.string(),
         city: joi.string(),
-        pincode: joi.number().positive()
-    }),
+        pincode: joi.number().positive(),
+        categories: joi.string()
+    })
 };
 
 module.exports = schema;

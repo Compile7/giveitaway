@@ -13,7 +13,9 @@ const ngoSchema = new Schema({
     category: { type: String, required: false },
     ifOther: { type: String, required: false },
     city: { type: String, required: false },
-    workArea: { type: String, required: false }
+    workArea: { type: String, required: false },
+    like: { type: Number, default: 0 },
+    disLike: { type: Number, default: 0 }
 }, {
     strict: false,
     timestamps: true
@@ -26,8 +28,8 @@ exports.findOneWithParams = async (condition, params) => {
     return value;
 };
 
-exports.findAllWithParams = async (condition, params, perPage = 10, page = 0, sort = '_id') => {
-    let value = await ngo.find(condition, params).limit(perPage).skip(perPage * page).sort(sort);
+exports.findAllWithParams = async (condition, params, perPage = 10, page = 0, sort = 'like') => {
+    let value = await ngo.find(condition, params).sort([[sort, -1]]).limit(perPage).skip(perPage * page);
     return value;
 };
 
@@ -43,5 +45,10 @@ exports.findCount = async (condition) => {
 
 exports.insertMany = async (data) => {
     let value = await ngo.insertMany(data);
+    return value;
+};
+
+exports.updateById = async (id, data) => {
+    let value = await ngo.findByIdAndUpdate(id, data);
     return value;
 };
