@@ -1,36 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function UserInfo(){
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState()
+    const [city, setCity] = useState("")
+    const navigate = useNavigate();
+
+    const onNameChange = (e)=>{
+        setName(e.target.value)
+    }
+    const onEmailChange = (e)=>{
+        setEmail(e.target.value);
+    }
+    const onPhoneChange = (e)=>{
+        setPhone(e.target.value)
+    }
+    const onCityChange = (e)=>{
+        setCity(e.target.value)
+    }
+    const submitDetails = ()=>{
+        localStorage.setItem("fname",name);
+        localStorage.setItem("email",email);
+        localStorage.setItem("phone",phone);
+        localStorage.setItem("city",city);
+        navigate('/category')
+    }
     return(
       <>
       <main>
-       <h1 class="title text-md text-center">Welcome Abord!</h1>
+       <h1 className="title text-md text-center">Welcome Abord!</h1>
 
-       <div class="page-description text-center">
+       <div className="page-description text-center">
            Seems, you are visiting us first time, please share a few information
        </div>
-       <div class="text-center image-icon">
+       <div className="text-center image-icon">
            <img src="./images/registration.svg" alt="registration"/>
        </div>
 
-       <div class="form container mt-24">
+       <div className="form container mt-24">
            <form action="">
-               <div class="form-group">
-                   <input type="text" placeholder="Enter your name"/>
+               <div className="form-group">
+                   <input onChange={(e)=>{onNameChange(e)}} type="text" placeholder="Enter your name"/>
                </div>
-               <div class="form-group">
-                   <input type="email" placeholder="Enter your email"/>
+               <div className="form-group">
+                   <input onChange={(e)=>{onEmailChange(e)}} type="email" placeholder="Enter your email"/>
                </div>
-               <div class="form-group">
-                   <input type="number" placeholder="Enter phone"/>
+               <div className="form-group">
+                   <input  onChange={(e)=>{onPhoneChange(e)}} type="text" placeholder="Enter phone"/>
                </div>
-               <div class="form-group">
-                   <input type="text" placeholder="Enter city"/>
+               <div className="form-group">
+                   <input  onChange={(e)=>{onCityChange(e)}} type="text" placeholder="Enter city"/>
                </div>
            </form>
        </div>
    </main>
-   <div class="cta big my-24">
-       <button class="text-center">Connect me with nearest NGO</button>
+   <div className="cta big my-24">
+       <button className="text-center" onClick={submitDetails}>Connect me with nearest NGO</button>
    </div>
    </>
     )

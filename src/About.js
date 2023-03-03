@@ -5,40 +5,40 @@ export default function About() {
         <>
             <main>
                 {/*Heading */}
-                <h1 class="title text-md text-center">About us</h1>
+                <h1 className="title text-md text-center">About us</h1>
                 {/*Heading */}
 
                 {/*description */}
-                <div class="page-description text-center">
+                <div className="page-description text-center">
                     We are a passionate group of individuals committed to creating positive change in the world. Join us as
                     we work together to make a difference!
                 </div>
                 {/*description */}
 
                 {/*profile pictures */}
-                <div class="profile-picture">
-                    <div class="icon">
-                        <img src="./images/neha.png" alt="Neha" />
+                <div className="profile-picture">
+                    <div className="icon">
+                        <a href="https://github.com/nehavyas13"><img  src="./images/neha.png" alt="Neha" /></a>
                     </div>
-                    <div class="icon">
-                        <img src="./images/krishna.png" alt="krishna" />
+                    <div className="icon">
+                    <a href="https://github.com/krishnaleela567"> <img src="./images/krishna.png" alt="krishna" /></a>
                     </div>
-                    <div class="icon">
-                        <img src="./images/bhupendra.png" alt="Bhupendra" />
+                    <div className="icon">
+                    <a href="https://github.com/Bhupendra9414">  <img src="./images/bhupendra.png" alt="Bhupendra" /></a>
                     </div>
-                    <div class="icon">
-                        <img src="./images/abhimanyu.png" alt="Abhimanyu" />
+                    <div className="icon">
+                    <a href="https://github.com/abhir9">  <img src="./images/abhimanyu.png" alt="Abhimanyu" /></a>
                     </div>
-                    <div class="icon">
-                        <img src="./images/naman.png" alt="Naman" />
+                    <div className="icon">
+                    <a href="https://github.com/Naman-Agarwal-SE"><img src="./images/naman.png" alt="Naman" /></a>
                     </div>
-                    <div class="icon">
-                        <img src="./images/kuldeep.png" alt="Kuldeep" />
+                    <div className="icon">
+                    <a href="https://github.com/Kuldeep-Chhipa"> <img src="./images/kuldeep.png" alt="Kuldeep" /></a>
                     </div>
                 </div>
                 {/*profile pictures */}
             </main>
-            <div class="signup text-center">
+            <div className="signup text-center">
                 Want to join us as NGO ? <a href="https://forms.gle/Ka1zhB89ABRkQhKD8" target="_blank" rel="noopener noreferrer">Sign up</a>
             </div>
         </>

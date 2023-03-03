@@ -20,29 +20,29 @@ function App() {
         </link>
         <Router>
           {/*Hamburger menu start */}
-          <input type="checkbox" id="navcheck"/>
+          {/* <input type="checkbox" id="navcheck"/> */}
           <div className="nav-btn">
-            <label htmlFor="navcheck">
+           <a href="/about"> <label htmlFor="navcheck">
               <span></span>
               <span></span>
               <span></span>
-            </label>
+            </label></a>
           </div>
           {/*Hamburger menu end */}
           {/*Header start */}
-          <header class="header">
-            <nav class="navbar">
+          <header className="header">
+            <nav className="navbar">
                 {/*Logo*/}
-                <div class="logo">
+                <div className="logo">
                     <a href="/">Give It <span>Away</span></a>
                 </div>
                 {/*Logo*/}
 
                 {/*Navigation*/}
-                <ul class="nav-menu">
+                <ul className="nav-menu">
 
-                    <li class="nav-item">
-                        <a href="about" class="nav-link">About Us</a>
+                    <li className="nav-item">
+                        <a href="/about" className="nav-link">About Us</a>
                     </li>
 
                 </ul>
@@ -64,7 +64,7 @@ function App() {
         </Router>
 
       </div>
-      <footer class="text-center">
+      <footer className="text-center">
             &copy;Copyright 2023, <a href="/">Give It <span>Away</span> </a>
         </footer>
     </>
