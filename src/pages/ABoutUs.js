@@ -2,7 +2,7 @@ import "./ABoutUs.css";
 
 const ABoutUs = () => {
   return (
-    <div className="about-us">
+    <div className="about-us container">
       <img className="icons-and-shape4" alt="" src="../icons-and-shape4.svg" />
       <h2 className="about-us1">ABOUT US</h2>
       <div className="about-us-child" />
