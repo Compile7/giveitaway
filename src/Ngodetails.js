@@ -1,34 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function Ngodetails() {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        let url = "https://giveitaway-backend.onrender.com/api/v1/user/getngolist?page=0&pageSize=10";
-        fetch(url).then((response) => {
-            response.json().then((result) => {
-                console.warn("result", result.Result);
-                setData(result.Result)
-            })
-        })
-    }, [])
+export default function Ngodetails(props) {
+    
     return (
         <>
             <main>
-                <div class="container">
-                    <h1 class="title text-md text-center">Nearest NGO list</h1>
-                    <div class="page-description text-center border-b pb-24">
+                <div className="container">
+                    <h1 className="title text-md text-center">Nearest NGO list</h1>
+                    <div className="page-description text-center border-b pb-24">
                         The closest NGOs are listed below based on your filter criteria; you can contact them by phone or
                         WhatsApp.
                     </div>
-
+                    {props.data.length===0?<p className="text-center">No Result Found</p>:""}
                     {
-                        data.map((item) => {
+                        props.data.map((item, i) => {
                             var myStringArray = item.contactNumber;
                             // var arrayLength = myStringArray.length;
                             return (
-                                <div class="ngo-list ">
+                                <div className="ngo-list " key={i}>
                                     <div>
-                                        <div class="about-ngo">
+                                        <div className="about-ngo">
                                             <div>
                                                 <b>NGO Name :</b>
                                                 <p>{item.ngoName}</p>
@@ -39,11 +30,11 @@ export default function Ngodetails() {
                                             </div>
                                             <div>
                                                 <b>Type :</b>
-                                                <p>Food</p>
+                                                <p>{item.category}</p>
                                             </div>
                                         </div>
-                                        <div class="ngo-social-media ">
-                                            <div class="social-links">
+                                        <div className="ngo-social-media ">
+                                            <div className="social-links">
                                                 <ul>
                                                     <li>
                                                         <a href="/">
@@ -72,14 +63,14 @@ export default function Ngodetails() {
                                                     })}
                                                 </ul>
                                             </div>
-                                            <div class="like-dislike">
+                                            <div className="like-dislike">
                                                 <ul>
-                                                    <li class="like">
+                                                    <li className="like">
                                                         <a href="/">
                                                             <img src="./images/thumbs-up.svg" alt="" />
                                                         </a>
                                                     </li>
-                                                    <li class="dislike">
+                                                    <li className="dislike">
                                                         <a href="/">
                                                             <img src="./images/thumbs-down.svg" alt="" />
                                                         </a>

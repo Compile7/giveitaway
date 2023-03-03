@@ -13,7 +13,8 @@ this.addEventListener("install", (event) => {
         "/user",
         "/donate",
         "/ngodetails",
-        "/"
+        "/",
+        "/category"
       ]);
     })
   );

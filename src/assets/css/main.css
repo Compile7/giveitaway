@@ -327,3 +327,6 @@ footer a span {
     color: #f7c933!important;
     transition: all 0.3s ease-in-out !important;
   }
+a{
+    cursor: pointer;
+}
