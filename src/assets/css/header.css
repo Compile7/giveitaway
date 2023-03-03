@@ -155,3 +155,10 @@ input#navcheck:checked ~ .backdrop {
         right: 0;
     }
 }
+.nav-btn a {
+    display: block;
+    cursor: pointer;
+}
+.nav-btn a label {
+    cursor: pointer;
+}
