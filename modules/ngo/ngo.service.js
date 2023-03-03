@@ -1,5 +1,5 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const { findAllWithParams, insertMany, findAll, findCount } = require('../../model/ngo.model')
+const { findAllWithParams, insertMany, findAll, findCount, updateById } = require('../../model/ngo.model')
 const config = require("config");
 
 const formatSheetData = async (rows) => {
@@ -34,6 +34,7 @@ const formatSheetData = async (rows) => {
  */
 const getNgos = async (req) => {
   const { page, pageSize, search, city, pincode } = req.query;
+  let {categories} = req.query;
   let condition = {};
   if (search) {
     condition['ngoName'] = new RegExp(search, 'i');
@@ -43,6 +44,18 @@ const getNgos = async (req) => {
   }
   if (pincode) {
     condition['pin'] = pincode;
+  }
+  if (categories) {
+    categories = categories.split("__");
+    if (categories.indexOf('other') == -1) {
+      categories = categories.map((category)=>{
+        return new RegExp(category, 'i')
+      });
+      condition['$or'] = [
+        {'category' : {"$in": categories}},
+        {'ifOther' : {"$in": categories}}
+      ]
+    }
   }
   const response = await findAllWithParams(condition, '', pageSize, page);
   return {
@@ -70,6 +83,7 @@ const updateNgos = async (req) => {
  */
 const getNgoCount = async (req) => {
   const { search, city, pincode } = req.query;
+  let {categories} = req.query;
   let condition = {};
   if (search) {
     condition['ngoName'] = new RegExp(search, 'i');
@@ -79,6 +93,18 @@ const getNgoCount = async (req) => {
   }
   if (pincode) {
     condition['pin'] = pincode;
+  }
+  if (categories) {
+    categories = categories.split("__");
+    if (categories.indexOf('other') == -1) {
+      categories = categories.map((category)=>{
+        return new RegExp(category, 'i')
+      });
+      condition['$or'] = [
+        {'category' : {"$in": categories}},
+        {'ifOther' : {"$in": categories}}
+      ]
+    }
   }
   const response = {};
   response.count = await findCount(condition);
@@ -118,10 +144,49 @@ const dataTransferToMongodb = async () => {
   }
 }
 
+const likeNgo = async (req) => {
+  const { id } = req.params;
+  const operation = req.query?.operation.toLowerCase();
+  const data = {};
+  if (operation == "add") {
+    data['$inc'] = {'like': 1}
+  } else if (operation == "remove") {
+    data['$inc'] = {'like': -1}
+  } else {
+    return {
+      response: true
+    };
+  }
+  const response = await updateById(id, data);
+  return {
+    response
+  };
+};
+
+const disLikeNgo = async (req) => {
+  const { id } = req.params;
+  const operation = req.query?.operation.toLowerCase();
+  const data = {};
+  if (operation == "add") {
+    data['$inc'] = {"disLike": 1}
+  } else if (operation == "remove") {
+    data['$inc'] = {"disLike": -1}
+  } else {
+    return {
+      response: true
+    };
+  }
+  const response = await updateById(id, data);
+  return {
+    response
+  };
+};
 
 module.exports = {
   getNgos,
   dataTransferToMongodb,
   updateNgos,
-  getNgoCount
+  getNgoCount,
+  likeNgo,
+  disLikeNgo
 };
