@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Ngodetails from "./Ngodetails.js";
-
+import Select from "react-select";
 export default function Category() {
+  let baseUrl = `https://giveitaway-backend.onrender.com`;
   const [flag, setFlag] = useState(true);
   const [data, setData] = useState([]);
   const [curruntPage, setCurrentPage] = useState(0);
@@ -12,6 +13,7 @@ export default function Category() {
   const [clothes, setclothes] = useState(false);
   const [medicines, setmedicines] = useState(false);
   const [selectCity, setselectCity] = useState("null");
+  const [cityData, setCityData] = useState([]);
   // let flag = true;
   const onFoodChange = (e) => {
     setfood(e.target.checked);
@@ -28,55 +30,54 @@ export default function Category() {
   const onMedicineChange = (e) => {
     setmedicines(e.target.checked);
   };
-  const onCityChange = (e) => {
-    setselectCity(e.target.value);
-  };
+  // Function triggered on selection
+  function onCityChange(data) {
+    setselectCity(data);
+  }
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("fname") == null) {
-      console.log("hello");
       navigate("/user");
     }
   });
-
-  const isExisting = () => {};
+  useEffect(() => {
+    fetch(`${baseUrl}/api/v1/user/getActiveCities`).then((response) => {
+      response.json().then((result) => {
+        result.Result = result.Result.map((value) => { return { "value": value["cityName"], "label": value["cityName"] } });
+        setCityData(result.Result)
+      });
+    });
+  }, []);
+  
+  const isExisting = () => { };
 
   const submitDetails = (e) => {
-    // let food = document.getElementById('food').checked;
-    // let stationary = document.getElementById('stationary').checked;
-    // let other = document.getElementById('other').checked;
-    // let clothes = document.getElementById('clothes').checked;
-    // let medicines = document.getElementById('medicines').checked;
-    // let selectCity = document.getElementById('selectCity').value;
-    // console.log(e.target.value)
-    setFlag(false);
+    let categories = "";
+    if (food) {
+      categories += categories.length ? '__Food' : 'Food';
+    }
+    if (stationary) {
+      categories += categories.length ? '__stationary' : 'stationary';
+    }
+    if (other) {
+      categories += categories.length ? '__other' : 'other';
+    }
+    if (clothes) {
+      categories += categories.length ? '__clothes' : 'clothes';
+    }
+    if (medicines) {
+      categories += categories.length ? '__medicines' : 'medicines';
+    }
 
-    let url = `https://giveitaway-backend.onrender.com/api/v1/user/getngolist?page=${
-      e.target.value
-    }&pageSize=15${selectCity === "null" ? "" : `&city=${selectCity}`}`;
-    fetch(url).then((response) => {
+    fetch(`${baseUrl}/api/v1/user/getngolist?` + new URLSearchParams({
+      page: e.target.value,
+      pageSize: 15,
+      ...selectCity !== "null" && { city: selectCity["value"] },
+      ...categories.length && { categories }
+    })).then((response) => {
+      setFlag(false);
       response.json().then((result) => {
-        // console.warn("result", result.Result);
-        let outputdata = [];
-        result.Result.forEach((item) => {
-          if (food && item.category === "Food") {
-            outputdata.push(item);
-          }
-          if (stationary && item.category === "Stationary") {
-            outputdata.push(item);
-          }
-          if (other && item.category === "Other") {
-            outputdata.push(item);
-          }
-          if (clothes && item.category === "Cloths") {
-            outputdata.push(item);
-          }
-          if (medicines && item.category === "Medicines") {
-            outputdata.push(item);
-          }
-        });
-        // console.log(outputdata)
-        setData(outputdata);
+        setData(result.Result);
         setCurrentPage(parseInt(e.target.value));
       });
     });
@@ -90,10 +91,7 @@ export default function Category() {
           <div className="category container">
             <div className="block">
               <div>
-                <div className="icon">
-                  <img src="./images/food.png" alt="" />
-                </div>
-                <div className="checkbox-wrpa">
+                <div className="icon checkbox-wrpa">
                   <div className="checkbox">
                     <input
                       onChange={(e) => {
@@ -101,29 +99,26 @@ export default function Category() {
                       }}
                       type="checkbox"
                       name="food"
-                      id="food"
+                      id="myCheckboxFood"
                       value="false"
                     />
-                    <label htmlFor="food">FOOD</label>
+                    <label htmlFor="myCheckboxFood"><img src="./images/food.png" alt="" /><br />FOOD</label>
                   </div>
                 </div>
               </div>
               <div>
                 <div className="icon">
-                  <img src="./images/stationary.png" alt="" />
-                </div>
-                <div className="checkbox-wrpa">
-                  <div className="checkbox">
+                  <div className="checkbox checkbox-wrpa">
                     <input
                       onChange={(e) => {
                         onStationaryChange(e);
                       }}
                       type="checkbox"
                       name="stationary"
-                      id="stationary"
-                      value=""
+                      id="myCheckboxStationary"
+                      value="false"
                     />
-                    <label htmlFor="stationary">Stationary</label>
+                    <label htmlFor="myCheckboxStationary"><img src="./images/stationary.png" alt="" /><br />Stationary</label>
                   </div>
                 </div>
               </div>
@@ -131,20 +126,17 @@ export default function Category() {
             <div className="block center">
               <div>
                 <div className="icon">
-                  <img src="./images/other.png" alt="" />
-                </div>
-                <div className="checkbox-wrpa">
-                  <div className="checkbox">
+                  <div className="checkbox checkbox-wrpa">
                     <input
                       onChange={(e) => {
                         onOtherChange(e);
                       }}
                       type="checkbox"
                       name="other"
-                      id="other"
-                      value="0"
+                      id="myCheckboxOther"
+                      value="false"
                     />
-                    <label htmlFor="other">Other</label>
+                    <label htmlFor="myCheckboxOther"><img src="./images/other.png" alt="" /><br />Other</label>
                   </div>
                 </div>
               </div>
@@ -152,39 +144,33 @@ export default function Category() {
             <div className="block">
               <div>
                 <div className="icon">
-                  <img src="./images/clothes.png" alt="" />
-                </div>
-                <div className="checkbox-wrpa">
-                  <div className="checkbox">
+                  <div className="checkbox checkbox-wrpa">
                     <input
                       onChange={(e) => {
                         onclothesChange(e);
                       }}
                       type="checkbox"
                       name="clothes"
-                      id="clothes"
-                      value="0"
+                      id="myCheckboxClothes"
+                      value="false"
                     />
-                    <label htmlFor="clothes">Clothes</label>
+                    <label htmlFor="myCheckboxClothes"><img src="./images/clothes.png" alt="" /><br />Clothes</label>
                   </div>
                 </div>
               </div>
               <div>
                 <div className="icon">
-                  <img src="./images/medicine.png" alt="" />
-                </div>
-                <div className="checkbox-wrpa">
-                  <div className="checkbox">
+                  <div className="checkbox checkbox-wrpa">
                     <input
                       onChange={(e) => {
                         onMedicineChange(e);
                       }}
                       type="checkbox"
                       name="medicines"
-                      id="medicines"
-                      value="0"
+                      id="myCheckboxMedicines"
+                      value="false"
                     />
-                    <label htmlFor="medicines">Medicines</label>
+                    <label htmlFor="myCheckboxMedicines"><img src="./images/medicine.png" alt="" /><br />Medicines</label>
                   </div>
                 </div>
               </div>
@@ -193,18 +179,13 @@ export default function Category() {
           <div className="form container mt-24">
             <form action="">
               <div className="form-group">
-                <select
-                  onChange={(e) => {
-                    onCityChange(e);
-                  }}
-                  name=""
-                  id="selectCity"
-                >
-                  <option value="null">Select City</option>
-                  <option value="Jaipur">Jaipur</option>
-                  <option value="Ajmer">Ajmer</option>
-                  <option value="Udaipur">Udaipur</option>
-                </select>
+                <Select
+                  options={cityData}
+                  placeholder="Select city"
+                  value={selectCity}
+                  onChange={onCityChange}
+                  isSearchable={true}
+                />
               </div>
             </form>
           </div>

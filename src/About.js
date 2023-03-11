@@ -57,6 +57,11 @@ export default function About() {
           {/*profile pictures */}
         </div>
       </main>
+      {/*CTA button*/}
+        <div className="cta big">
+          <a href="https://github.com/Compile7/giveitaway/issues/new"><button  className="text-center">Raise Issue</button></a>
+        </div>
+      {/*CTA button*/}
       <div className="signup text-center">
         Want to join us as NGO ?{" "}
         <a
