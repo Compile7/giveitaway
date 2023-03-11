@@ -52,3 +52,8 @@ exports.updateById = async (id, data) => {
     let value = await ngo.findByIdAndUpdate(id, data);
     return value;
 };
+
+exports.findDistinct = async (condition) => {
+    let value = await ngo.find().distinct(condition)
+    return value;
+};
