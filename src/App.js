@@ -22,7 +22,7 @@ function App() {
           {/*Hamburger menu start */}
           {/* <input type="checkbox" id="navcheck"/> */}
           <div className="nav-btn">
-           <a href="/about"> <label htmlFor="navcheck">
+            <a href="/about"> <label htmlFor="navcheck">
               <span></span>
               <span></span>
               <span></span>
@@ -32,23 +32,24 @@ function App() {
           {/*Header start */}
           <header className="header">
             <nav className="navbar">
-                {/*Logo*/}
-                <div className="logo">
-                    <a href="/">Give It <span>Away</span></a>
-                </div>
-                {/*Logo*/}
+              {/*Logo*/}
+              {window.location.pathname === "/" ? "" : <div className="logo">
+                <a href="/">Give It <span>Away</span></a>
+              </div>
+              }
+              {/*Logo*/}
 
-                {/*Navigation*/}
-                <ul className="nav-menu">
+              {/*Navigation*/}
+              <ul className="nav-menu">
 
-                    <li className="nav-item">
-                        <a href="/about" className="nav-link">About Us</a>
-                    </li>
+                <li className="nav-item">
+                  <a href="/about" className="nav-link">About Us</a>
+                </li>
 
-                </ul>
-                {/*Navigation*/}
+              </ul>
+              {/*Navigation*/}
             </nav>
-        </header>
+          </header>
           {/*Header start */}
           {/*Backdrop start (for mobile menu only) */}
 
@@ -65,8 +66,8 @@ function App() {
 
       </div>
       <footer className="text-center">
-            &copy;Copyright 2023, <a href="/">Give It <span>Away</span> </a>
-        </footer>
+        &copy;Copyright 2023, <a href="/">Give It <span>Away</span> </a>
+      </footer>
     </>
 
   );

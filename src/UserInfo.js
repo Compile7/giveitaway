@@ -20,10 +20,13 @@ export default function UserInfo(){
         setCity(e.target.value)
     }
     const submitDetails = ()=>{
-        localStorage.setItem("fname",name);
-        localStorage.setItem("email",email);
-        localStorage.setItem("phone",phone);
-        localStorage.setItem("city",city);
+        let userobj = {
+            "fname" : name,
+            "email":email,
+            "phone":phone,
+            "city":city}
+        
+        localStorage.setItem("userInfo",JSON.stringify(userobj))
         navigate('/category')
     }
     return(

@@ -20,37 +20,33 @@ export default function About() {
           {/*profile pictures */}
           <div className="profile-picture">
             <div className="icon">
-              <a href="https://github.com/nehavyas13">
-                <img src="./images/neha.png" alt="Neha" />
+              <a href="https://github.com/nehavyas13" target="_blank" rel="noreferrer">
+                <img src="https://github.com/nehavyas13.png" alt="Neha" />
               </a>
             </div>
             <div className="icon">
-              <a href="https://github.com/krishnaleela567">
-                {" "}
-                <img src="./images/krishna.png" alt="krishna" />
+              <a href="https://github.com/krishnaleela567" target="_blank" rel="noreferrer">
+                <img src="https://github.com/krishnaleela567.png" alt="krishna" />
               </a>
             </div>
             <div className="icon">
-              <a href="https://github.com/Bhupendra9414">
-                {" "}
-                <img src="./images/bhupendra.png" alt="Bhupendra" />
+              <a href="https://github.com/Bhupendra9414" target="_blank" rel="noreferrer">
+                <img src="https://github.com/Bhupendra9414.png" alt="Bhupendra" />
               </a>
             </div>
             <div className="icon">
-              <a href="https://github.com/abhir9">
-                {" "}
-                <img src="./images/abhimanyu.png" alt="Abhimanyu" />
+              <a href="https://github.com/abhir9" target="_blank" rel="noreferrer">
+                <img src="https://github.com/abhir9.png" alt="Abhimanyu" />
               </a>
             </div>
             <div className="icon">
-              <a href="https://github.com/Naman-Agarwal-SE">
-                <img src="./images/naman.png" alt="Naman" />
+              <a href="https://github.com/Naman-Agarwal-SE" target="_blank" rel="noreferrer">
+                <img src="https://github.com/Naman-Agarwal-SE.png" alt="Naman" />
               </a>
             </div>
             <div className="icon">
-              <a href="https://github.com/Kuldeep-Chhipa">
-                {" "}
-                <img src="./images/kuldeep.png" alt="Kuldeep" />
+              <a href="https://github.com/Kuldeep-Chhipa" target="_blank" rel="noreferrer">
+                <img src="https://github.com/Kuldeep-Chhipa.png" alt="Kuldeep" />
               </a>
             </div>
           </div>
