@@ -82,7 +82,6 @@ export default function Category() {
       });
     });
   };
-  isExisting();
   if (flag) {
     return (
       <>
@@ -191,8 +190,6 @@ export default function Category() {
           </div>
         </main>
         <div className="cta big my-24">
-          {/* <a href="/ngodetails">
-            </a> */}
           <button
             className="text-center"
             value={0}

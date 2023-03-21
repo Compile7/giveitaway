@@ -236,11 +236,21 @@ footer a span {
     display: flex;
     gap: 4px;
 }
+.about-ngo > div:first-child b{
+    width: 24%;
+}
+.about-ngo > div:first-child p {
+    width: 76%;
+}
 .about-ngo > div:not(:last-child) {
     margin-bottom: 4px;
 }
 .about-ngo > div b {
     font-weight: 500;
+    text-align: left;
+}
+.about-ngo > div p {
+    text-align: left;
 }
 .ngo-social-media {
     display: flex;
