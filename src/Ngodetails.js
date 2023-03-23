@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Ngodetails(props) {
+  const [liked, setliked] = useState(false);
+  const [disliked, setdisliked] = useState(false);
+
   const onLikeHandler = (i) => {
+    if (!disliked){
     let element = document.getElementById("like" + i).children[0]
     let isSet = JSON.parse(element.getAttribute("data"));
+    isSet ?setliked(false):setliked(true);
     element.setAttribute("stroke", isSet ? "#F7C933" : "#d81400");
     element.setAttribute("fill", isSet ? "none" : "#f7c933");
     element.setAttribute("data", isSet ? "false" : "true");
+    }
   }
   const onDislikeHandler = (i) => {
+    if (!liked){
     let element = document.getElementById("dislike" + i).children[0]
     let isSet = JSON.parse(element.getAttribute("data"));
-    element.setAttribute("stroke", isSet ? "#F7C933" : "#d81400");
+    isSet ?setdisliked(false):setdisliked(true);
+    element.setAttribute("stroke", isSet ? "#d81400" : "#d81400");
     element.setAttribute("fill", isSet ? "none" : "#f7c933");
     element.setAttribute("data", isSet ? "false" : "true");
-  }
+  }}
   return (
     <>
       <main className="ngodetail-wrap">
@@ -31,8 +39,6 @@ export default function Ngodetails(props) {
           )}
           {props.data.map((item, i) => {
             var myStringArray = item.contactNumber;
-            // var arrayLength = myStringArray.length;
-            console.log(item, i)
             return (
               <div className="ngo-list " key={i}>
                 <div>
@@ -53,11 +59,15 @@ export default function Ngodetails(props) {
                   <div className="ngo-social-media ">
                     <div className="social-links">
                       <ul>
+                      {Object.keys(item.location).length > 0 ? (
+         
                         <li>
                           <a href="/">
                             <img src="./images/map-pin.svg" alt="" />
                           </a>
                         </li>
+                        ):null }
+           
                         {Object.keys(item.whatsappNumber).length > 0 ? (
                           <li>
                             <a
@@ -69,7 +79,6 @@ export default function Ngodetails(props) {
                         ) : null}
 
                         {myStringArray.map((number, index) => {
-                          // console.log(index,number);
                           return (
                             <li key={index}>
                               <a href={`tel:${number}`}>
