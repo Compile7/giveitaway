@@ -55,7 +55,7 @@ export default function About() {
       </main>
       {/*CTA button*/}
         <div className="cta big">
-          <a href="https://github.com/Compile7/giveitaway/issues/new"><button  className="text-center">Raise Issue</button></a>
+          <a href="https://github.com/Compile7/giveitaway/issues/new" target="_blank" rel="noreferrer noopener"><button  className="text-center">Raise An Issue</button></a>
         </div>
       {/*CTA button*/}
       <div className="signup text-center">

@@ -1,8 +1,6 @@
-// import logo from "./source/logo1.png";
 import "./App.css";
 import "../src/assets/css/header.css"
 import "../src/assets/css/main.css"
-// import { Navbar, Nav ,Form,Button} from "react-bootstrap";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./Home";
 import About from "./About"
@@ -19,39 +17,31 @@ function App() {
         <link rel="shortcut icon" href="/">
         </link>
         <Router>
-          {/*Hamburger menu start */}
-          {/* <input type="checkbox" id="navcheck"/> */}
+
           <div className="nav-btn">
-            <a href="/about"> <label htmlFor="navcheck">
-              <span></span>
-              <span></span>
-              <span></span>
-            </label></a>
+            <a href="/about">
+              <img src="./images/info.png" alt="" height="25" width="25" />
+            </a>
           </div>
-          {/*Hamburger menu end */}
           {/*Header start */}
           <header className="header">
             <nav className="navbar">
-              {/*Logo*/}
+
               {window.location.pathname === "/" ? "" : <div className="logo">
                 <a href="/">Give It <span>Away</span></a>
               </div>
               }
-              {/*Logo*/}
 
               {/*Navigation*/}
               <ul className="nav-menu">
-
                 <li className="nav-item">
                   <a href="/about" className="nav-link">About Us</a>
                 </li>
-
               </ul>
               {/*Navigation*/}
             </nav>
           </header>
           {/*Header start */}
-          {/*Backdrop start (for mobile menu only) */}
 
           <div className="backdrop"></div>
           <Routes>

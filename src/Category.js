@@ -36,7 +36,7 @@ export default function Category() {
   }
   const navigate = useNavigate();
   useEffect(() => {
-    if (localStorage.getItem("fname") == null) {
+    if (localStorage.getItem("userInfo") == null) {
       navigate("/user");
     }
   });
@@ -47,7 +47,7 @@ export default function Category() {
         setCityData(result.Result)
       });
     });
-  }, []);
+  }, );
   
   const isExisting = () => { };
 
@@ -82,6 +82,7 @@ export default function Category() {
       });
     });
   };
+  isExisting();
   if (flag) {
     return (
       <>

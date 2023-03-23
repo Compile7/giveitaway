@@ -218,11 +218,13 @@ footer a span {
 .border-b {
     border-bottom: 1px solid var(--light-gray);
 }
+.nav-btn > div:{
+    height: 20px !important;
+    width: 20px !important;
 
-/*NGO list CSS*/
-.ngo-list {
-    margin-bottom: 56px;
 }
+div:first-child a
+/*NGO list CSS*/
 .ngo-list > div {
     padding-bottom: 16px;
     margin-bottom: 16px;
@@ -237,10 +239,10 @@ footer a span {
     gap: 4px;
 }
 .about-ngo > div:first-child b{
-    width: 24%;
+    width: 26%;
 }
 .about-ngo > div:first-child p {
-    width: 76%;
+    width: 74%;
 }
 .about-ngo > div:not(:last-child) {
     margin-bottom: 4px;
@@ -316,12 +318,6 @@ footer a span {
     width: 16px;
     height: 16px;
     accent-color: var(--red);
-    /* position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0; */
 }
 .checkbox-wrpa label {
     color: var(--red);
@@ -335,11 +331,7 @@ footer a span {
     gap: 8px;
 }
 a:link {
-    /* background-color: #f44336;*/
-    /* padding: 14px 25px; 
-    text-align: center; */
     text-decoration: none;
-    /* display: inline-block; */
 }
 a:hover {
     color: #de2814 !important;
@@ -383,7 +375,6 @@ button:hover {
   
   :checked+label img {
     transform: scale(0.9);
-    /* box-shadow: 0 0 5px #333; */
     z-index: -1;
   }
   
