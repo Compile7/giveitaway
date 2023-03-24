@@ -41,13 +41,14 @@ export default function Category() {
     }
   });
   useEffect(() => {
+    let baseUrl = `https://giveitaway-backend.onrender.com`;
     fetch(`${baseUrl}/api/v1/user/getActiveCities`).then((response) => {
       response.json().then((result) => {
         result.Result = result.Result.map((value) => { return { "value": value["cityName"], "label": value["cityName"] } });
         setCityData(result.Result)
       });
     });
-  }, );
+  },[]);
   
   const isExisting = () => { };
 

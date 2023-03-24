@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function UserInfo(){
+    let baseUrl = `https://giveitaway-backend.onrender.com`;
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState()
@@ -20,6 +21,9 @@ export default function UserInfo(){
         setCity(e.target.value)
     }
     const submitDetails = ()=>{
+        fetch(`${baseUrl}/api/v1/user/AddEventCount?eventName=submit_user_info`, {  
+            method: 'POST',       
+          })
         let userobj = {
             "fname" : name,
             "email":email,
@@ -28,6 +32,7 @@ export default function UserInfo(){
         
         localStorage.setItem("userInfo",JSON.stringify(userobj))
         navigate('/category')
+
     }
     return(
       <>
