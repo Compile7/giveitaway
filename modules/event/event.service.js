@@ -1,4 +1,5 @@
 const { findOneWithParams, create, findAll, updateById } = require('../../model/event.model');
+const { findCount} = require('../../model/ngo.model');
 const config = require("config");
 
 /**
@@ -34,7 +35,19 @@ const AddEventClickCount = async (req) => {
   };
 };
 
+const getBasicStats = async (req) => {
+  const eventData = await findAll({}, '');
+  const ngoCount = await findCount({});
+  return {
+    response: {
+      eventData,
+      ngoCount
+    }
+  };
+};
+
 module.exports = {
   getEvent,
-  AddEventClickCount
+  AddEventClickCount,
+  getBasicStats
 };
