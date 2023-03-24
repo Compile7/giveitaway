@@ -2,6 +2,12 @@ import React from "react";
 // import Button from "react-bootstrap/Button";
 
 export default function Home() {
+  let baseUrl = `https://giveitaway-backend.onrender.com`;
+const onEventCall =()=>{
+  fetch(`${baseUrl}/api/v1/user/AddEventCount?eventName=click_donate_now`, {  
+    method: 'POST',       
+  })
+}
   return (
     <>
       <main>
@@ -23,7 +29,7 @@ export default function Home() {
 
         {/*CTA button*/}
         <div className="cta big">
-          <a href="/category"><button  className="text-center">Give it Away</button></a>
+          <a href="/category"><button onClick={onEventCall} className="text-center">Give it Away</button></a>
         </div>
         {/*CTA button*/}
 

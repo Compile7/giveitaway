@@ -5,24 +5,31 @@ export default function Ngodetails(props) {
   const [disliked, setdisliked] = useState(false);
 
   const onLikeHandler = (i) => {
-    if (!disliked){
-    let element = document.getElementById("like" + i).children[0]
-    let isSet = JSON.parse(element.getAttribute("data"));
-    isSet ?setliked(false):setliked(true);
-    element.setAttribute("stroke", isSet ? "#F7C933" : "#d81400");
-    element.setAttribute("fill", isSet ? "none" : "#f7c933");
-    element.setAttribute("data", isSet ? "false" : "true");
+    if (!disliked) {
+      let element = document.getElementById("like" + i).children[0]
+      let isSet = JSON.parse(element.getAttribute("data"));
+      isSet ? setliked(false) : setliked(true);
+      element.setAttribute("stroke", isSet ? "#F7C933" : "#d81400");
+      element.setAttribute("fill", isSet ? "none" : "#f7c933");
+      element.setAttribute("data", isSet ? "false" : "true");
     }
   }
   const onDislikeHandler = (i) => {
-    if (!liked){
-    let element = document.getElementById("dislike" + i).children[0]
-    let isSet = JSON.parse(element.getAttribute("data"));
-    isSet ?setdisliked(false):setdisliked(true);
-    element.setAttribute("stroke", isSet ? "#d81400" : "#d81400");
-    element.setAttribute("fill", isSet ? "none" : "#f7c933");
-    element.setAttribute("data", isSet ? "false" : "true");
-  }}
+    if (!liked) {
+      let element = document.getElementById("dislike" + i).children[0]
+      let isSet = JSON.parse(element.getAttribute("data"));
+      isSet ? setdisliked(false) : setdisliked(true);
+      element.setAttribute("stroke", isSet ? "#d81400" : "#d81400");
+      element.setAttribute("fill", isSet ? "none" : "#f7c933");
+      element.setAttribute("data", isSet ? "false" : "true");
+    }
+  }
+  let baseUrl = `https://giveitaway-backend.onrender.com`;
+  const onEventCall = () => {
+    fetch(`${baseUrl}/api/v1/user/AddEventCount?eventName=contacted_ngo`, {
+      method: 'POST',
+    })
+  }
   return (
     <>
       <main className="ngodetail-wrap">
@@ -59,21 +66,21 @@ export default function Ngodetails(props) {
                   <div className="ngo-social-media ">
                     <div className="social-links">
                       <ul>
-                      {Object.keys(item.location).length > 0 ? (
-         
-                        <li>
-                          <a href="/">
-                            <img src="./images/map-pin.svg" alt="" />
-                          </a>
-                        </li>
-                        ):null }
-           
+                        {Object.keys(item.location).length > 0 ? (
+
+                          <li>
+                            <a href="/">
+                              <img src="./images/map-pin.svg" alt="" />
+                            </a>
+                          </li>
+                        ) : null}
+
                         {Object.keys(item.whatsappNumber).length > 0 ? (
                           <li>
                             <a
                               href={`https://wa.me/${item.whatsappNumber}?text=`}
                             >
-                              <img src="./images/whatsapp.svg" alt="" />
+                              <img onClick={onEventCall} src="./images/whatsapp.svg" alt="" />
                             </a>
                           </li>
                         ) : null}
@@ -82,7 +89,7 @@ export default function Ngodetails(props) {
                           return (
                             <li key={index}>
                               <a href={`tel:${number}`}>
-                                <img src="./images/phone-call.svg" alt="" />
+                                <img onClick={onEventCall} src="./images/phone-call.svg" alt="" />
                               </a>
                             </li>
                           );
