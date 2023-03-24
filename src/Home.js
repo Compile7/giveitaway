@@ -1,13 +1,24 @@
-import React from "react";
-// import Button from "react-bootstrap/Button";
+import React, { useState, useEffect } from "react";
+
 
 export default function Home() {
+  const [data, setData] = useState([]);
+  const [ngoCount, setNgoCount] = useState([]);
+  useEffect(() => {
+    let baseUrl1 = `https://giveitaway-backend.onrender.com`;
+    fetch(`${baseUrl1}/api/v1/user/basicInfo`).then((response) => {
+      response.json().then((result) => {
+        setData(result.Result.eventData)
+        setNgoCount(result.Result.ngoCount)
+      });
+    });
+  }, []);
   let baseUrl = `https://giveitaway-backend.onrender.com`;
-const onEventCall =()=>{
-  fetch(`${baseUrl}/api/v1/user/AddEventCount?eventName=click_donate_now`, {  
-    method: 'POST',       
-  })
-}
+  const onEventCall = () => {
+    fetch(`${baseUrl}/api/v1/user/AddEventCount?eventName=click_donate_now`, {
+      method: 'POST',
+    })
+  }
   return (
     <>
       <main>
@@ -40,17 +51,21 @@ const onEventCall =()=>{
               <img src="./images/achivements01.png" alt="" />
             </div>
             <div className="description">
-              <span>60+</span>
+            {data && !!data.length && <span>{ngoCount}</span>}
               <span>NGO</span>
               <span>Joined</span>
             </div>
           </div>
+
           <div className="block">
             <div className="icon">
               <img src="./images/achivements02.png" alt="" />
             </div>
             <div className="description">
-              <span>450+</span>
+            {data && !!data.length && data.map((event, index) => (
+              <span>{event.eventName === "contacted_ngo" ? event.count:"" }</span>
+              )
+              )}
               <span>Package</span>
               <span>Delivered</span>
             </div>
@@ -60,7 +75,10 @@ const onEventCall =()=>{
               <img src="./images/achivements03.png" alt="" />
             </div>
             <div className="description">
-              <span>250+</span>
+            {data && !!data.length && data.map((event, index) => (
+              <span>{event.eventName === "submit_user_info" ? event.count:"" }</span>
+              )
+              )}
               <span>People</span>
               <span>Connected</span>
             </div>
