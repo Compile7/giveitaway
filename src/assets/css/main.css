@@ -218,11 +218,6 @@ footer a span {
 .border-b {
     border-bottom: 1px solid var(--light-gray);
 }
-.nav-btn > div:{
-    height: 20px !important;
-    width: 20px !important;
-
-}
 div:first-child a
 /*NGO list CSS*/
 .ngo-list > div {
