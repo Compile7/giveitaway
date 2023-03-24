@@ -165,6 +165,8 @@ footer a span {
 .profile-picture img {
     max-width: 96px;
     max-height: 96px;
+    border: 2px solid rgb(216,20,0);
+    border-radius: 50%;
 }
 .container {
     max-width: 380px;
